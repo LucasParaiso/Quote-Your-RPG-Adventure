@@ -42,7 +42,6 @@ client.on('messageCreate', (message) => {
     if (commandName === 'sort' || commandName === 's') {
         const itens = db.data.quotes.length
         const id = Math.floor(Math.random() * itens) + 1
-        console.log(id)
 
         return message.reply({ 
             embeds: [enviaMensagem(id)] 
