@@ -12,6 +12,7 @@ const adapter = new JSONFile(file)
 const db = new Low(adapter)
 
 await db.read()
+db.data ||= { quotes: [] }
 
 const client = new Discord.Client({
     intents: [
