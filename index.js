@@ -2,6 +2,7 @@ import Discord, { Intents, MessageEmbed } from 'discord.js'
 import { join, dirname } from 'path'
 import { Low, JSONFile } from 'lowdb'
 import { fileURLToPath } from 'url'
+
 import dotenv from 'dotenv'
 dotenv.config()
 
