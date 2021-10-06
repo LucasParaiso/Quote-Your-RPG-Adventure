@@ -50,6 +50,9 @@ client.on('messageCreate', (message) => {
 
         db.data.quotes.push(mensagem)
         db.write()
+        return message.reply({ 
+            embeds: [enviaMensagem(db.data.quotes.length)] 
+        });
     } else if (commandName === 'download') {
         message.channel.send({ files: ["./db.json"]});
     } else if (commandName === 'link') {
