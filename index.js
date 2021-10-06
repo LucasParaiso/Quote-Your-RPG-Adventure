@@ -30,9 +30,8 @@ client.on('messageCreate', (message) => {
   
     const args = message.content.split(/ +/);
     const prefixo = args.shift();
-    const commandName = args.shift().toLowerCase();
-
     if (prefixo != prefix) return;
+    const commandName = args.shift().toLowerCase();
 
     if (parseInt(commandName)) return message.reply({ 
         embeds: [enviaMensagem(commandName)] 
