@@ -15,7 +15,7 @@ if not DISCORD_TOKEN:
     raise RuntimeError("Defina a variável de ambiente DISCORD_TOKEN.")
 
 # Bot + intents
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Formatador de quote
