@@ -8,8 +8,8 @@ from dateutil import parser as dateparser
 
 # Carregar variáveis de ambiente
 load_dotenv()
-DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
-API_URL = os.getenv("QUOTES_API_URL", "https://quote.lparaiso.com")
+DISCORD_TOKEN = os.environ.get('DISCORD_TOKEN')
+API_URL = os.environ.get('QUOTES_API_URL')
 
 if not DISCORD_TOKEN:
     raise RuntimeError("Defina a variável de ambiente DISCORD_TOKEN.")
@@ -38,8 +38,8 @@ def format_quote(data: dict):
 
     return msg, " • ".join(footer_parts)
 
-# Slash command: /quote random
-@bot.tree.command(name="quote_random", description="Mostra uma quote aleatória")
+# Slash command: /quote
+@bot.tree.command(name="quote", description="Mostra uma quote aleatória")
 async def quote_random(interaction: discord.Interaction):
     async with aiohttp.ClientSession() as session:
         async with session.get(f"{API_URL}/quote_random.php") as res:
