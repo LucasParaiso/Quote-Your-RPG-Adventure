@@ -1,2 +1,2 @@
-# QuoteBot-v2
-Um bot de Citações
+# Quote Your Adventure
+Keep epic moments from your RPG adventure inside FoundryVTT
